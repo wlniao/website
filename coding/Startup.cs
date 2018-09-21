@@ -19,7 +19,7 @@ namespace server
             app.Run(async (context) =>
             {
                 var req = context.Request.Path.Value;
-                if (req == "/")
+                if (req.IndexOf('.') < 0)
                 {
                     context.Response.ContentType = "text/html";
                     context.Response.Body.Write(Program.Html, 0, Program.Html.Length);
