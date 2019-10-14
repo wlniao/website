@@ -28,6 +28,10 @@ namespace server
             {
                 index = "default.html";
             }
+            else if (System.IO.File.Exists(root + "app.html"))
+            {
+                index = "app.html";
+            }
             else if (System.IO.File.Exists(root + "welcome.html"))
             {
                 index = "welcome.html";
