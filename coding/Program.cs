@@ -36,7 +36,6 @@ namespace server
             {
                 index = "welcome.html";
             }
-            Console.WriteLine("Load By: " + root + index);
 
             if (System.IO.File.Exists(root + index))
             {

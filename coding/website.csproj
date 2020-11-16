@@ -8,11 +8,15 @@
     <Copyright>Wlniao</Copyright>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Wlniao.XCore" Version="3.0.11" />
+    <None Remove="Dockerfile" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="Dockerfile">
+    <Content Include="Dockerfile">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </None>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Wlniao.XCore" Version="3.0.11" />
   </ItemGroup>
 </Project>
