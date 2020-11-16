@@ -1,2 +1,2 @@
-FROM registry.cn-hangzhou.aliyuncs.com/wlniao/dotnet:2.1.2
+FROM wlniao/dotnet:3.1.0
 ENTRYPOINT ["dotnet", "website.dll"]

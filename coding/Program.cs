@@ -32,6 +32,7 @@ namespace server
             {
                 index = "welcome.html";
             }
+            Console.WriteLine("Load By: " + root + index);
 
             if (System.IO.File.Exists(root + index))
             {
@@ -44,6 +45,15 @@ namespace server
         }
         public static void Main(string[] args)
         {
+            var port = 80;
+            if (args.Length > 0)
+            {
+                try
+                {
+                    port = Convert.ToInt32(args[0]);
+                }
+                catch { }
+            }
             LoadHtml();
             try
             {
@@ -73,7 +83,7 @@ namespace server
             .UseStartup<Startup>()
             .UseKestrel(o =>
             {
-                o.Listen(System.Net.IPAddress.Any, 80);
+                o.Listen(System.Net.IPAddress.Any, port <= 0 ? 80 : port);
             })
             .Build();
             host.Run();
